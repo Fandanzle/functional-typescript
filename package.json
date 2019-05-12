@@ -1,0 +1,72 @@
+{
+  "name": "functional-samples",
+  "version": "1.0.0",
+  "description": "Simple collection of how to implement basic functional programming.",
+  "main": "index.js",
+  "repository": "git@github.com:alexbrownphotobox/javascript_functional_deck.git",
+  "author": "Alex Brown <alex.brown@photobox.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean:build && babel src --ignore src/**/__tests__ --out-dir dist --extensions '.ts,.tsx'",
+    "clean:build": "rm -rf dist",
+    "coverage": "jest --coverage",
+    "prepublishOnly": "yarn build",
+    "start": "babel-node --extensions '.ts,.tsx' index.ts",
+    "test": "jest",
+    "test:watch": "jest -o --watch",
+    "typecheck": "tsc"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "moduleDirectories": [
+      "./node_modules",
+      "./src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    }
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@types/jest": "^24.0.12",
+    "@types/react": "^16.0.25",
+    "@types/react-dom": "^16.0.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.4",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.12.1",
+    "tslint": "^5.8.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^3.4.3"
+  },
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "ts-jest": "^24.0.2"
+  }
+}
